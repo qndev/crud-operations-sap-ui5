@@ -1,0 +1,149 @@
+<mvc:View controllerName="demo.com.vn.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<!--<ObjectHeader id="objectHeader" title="{Name}" number="{ path: 'Price', formatter: '.formatter.currencyValue' }"/>-->
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://add-process" tooltip="{i18n>detailIconTabBarInfo}" text="Product Process" iconColor="Positive">
+						<content>
+							<Button text="Create" width="100px" id="__button2" press="onOpenViewDialog" icon="sap-icon://add"/>
+							<Button text="Delete" width="100px" id="__button0" press="onDelete" icon="sap-icon://delete"/>
+							<Button text="Update" width="100px" id="__button1" press="onUpdate" icon="sap-icon://save"/>
+							<Table noDataText="No data" id="__table1" headerText="" mode="SingleSelectLeft">
+								<items>
+									<ColumnListItem id="__item12">
+										<cells navigationMode="">
+											<Input ariaLabelledBy="__xmlview0--__label02" width="100%" id="__input4" value="{ID}"/>
+											<Input ariaLabelledBy="__xmlview1--__label03" width="100%" id="__input5" value="{Name}"/>
+											<Input ariaLabelledBy="__xmlview2--__label04" width="100%" id="__input6" value="{Description}"/>
+											<Input ariaLabelledBy="__xmlview3--__label05" width="100%" id="__input7" value="{ReleaseDate}"/>
+											<Input ariaLabelledBy="__xmlview4--__label06" width="100%" id="__input8" value="{DiscontinuedDate}"/>
+											<Input ariaLabelledBy="__xmlview5--__label07" width="100%" id="__input9" value="{Rating}"/>
+											<Input ariaLabelledBy="__xmlview6--__label08" width="100%" id="__input10" value="{Price}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="__column22">
+										<header>
+											<Label text="ID" id="__label02"/>
+										</header>
+									</Column>
+									<Column id="__column32">
+										<header>
+											<Label text="Name" id="__label12"/>
+										</header>
+									</Column>
+									<Column id="__column42">
+										<header>
+											<Label text="Description" id="__label22"/>
+										</header>
+									</Column>
+									<Column id="__column52">
+										<header>
+											<Label text="ReleaseDate" id="__label32"/>
+										</header>
+									</Column>
+									<Column id="__column62">
+										<header>
+											<Label text="DCDate" id="__label42"/>
+										</header>
+									</Column>
+									<Column id="__column72">
+										<header>
+											<Label text="Rating" id="__label52"/>
+										</header>
+									</Column>
+									<Column id="__column82">
+										<header>
+											<Label text="Price" id="__label62"/>
+										</header>
+									</Column>
+								</columns>
+							</Table>
+							<!--<List noDataText="Drop list items here" id="__list0" items="{/Products}">-->
+							<!--	<items>-->
+							<!--		<StandardListItem type="Navigation" title="{ID}" description="{Name}" icon="sap-icon://picture" id="__item0" counter="{Rating}"-->
+							<!--			press="onDelete" selected="true"/>-->
+							<!--	</items>-->
+							<!--</List>-->
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://detail-view" tooltip="{i18n>detailIconTabBarAttachments}" text="Detail" iconColor="Neutral">
+						<content>
+							<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{ path: '/Products', sorter: { path: 'ID', descending: false }, groupHeaderFactory: '.createGroupHeader' }" headerText="Informations" growing="true" growingScrollToLoad="false" growingThreshold="5">
+								<items>
+									<ColumnListItem id="__item1">
+										<cells>
+											<Text text="{ID}" id="__text8"/>
+											<Text text="{Name}" id="__text9"/>
+											<Text text="{Description}" id="__text10"/>
+											<Text text="{Price}" id="__text12"/>
+											<Text text="{Rating}" id="__text13"/>
+											<Text text="{ReleaseDate}" id="__text11"/>
+											<!--<Text text="{DiscontinuedDate}" id="__text14"/>-->
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="__column2">
+										<header>
+											<Label text="ID" id="__label0"/>
+										</header>
+									</Column>
+									<Column id="__column3">
+										<header>
+											<Label text="Name" id="__label1"/>
+										</header>
+									</Column>
+									<Column id="__column4">
+										<header>
+											<Label text="Description" id="__label2"/>
+										</header>
+									</Column>
+									<Column id="__column6">
+										<header>
+											<Label text="Price" id="__label4"/>
+										</header>
+									</Column>
+									<Column id="__column7">
+										<header>
+											<Label text="Rating" id="__label5"/>
+										</header>
+									</Column>
+									<Column id="__column5">
+										<header>
+											<Label text="ReleaseDate" id="__label3"/>
+										</header>
+									</Column>
+									<!--<Column id="__column8">-->
+									<!--	<header>-->
+									<!--		<Label text="DiscontinuedDate" id="__label6"/>-->
+									<!--	</header>-->
+									<!--</Column>-->
+								</columns>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Help" icon="sap-icon://sys-help" iconColor="Negative" id="__filter0">
+						<content>
+							<Input width="100%" id="__input0" required="true"/>
+							<Input width="100%" id="__input1"/>
+							<Input width="100%" id="__input2"/>
+							<Input width="100%" id="__input3"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:DetailPage>
+</mvc:View>

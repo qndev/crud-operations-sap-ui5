@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" width="100%">
+	<Dialog title="Create Products" id="dialog">
+		<content>
+			<Text text="ID" width="50%" id="__text9"/>
+			<Input width="100%" id="__inputCRUD0"/>
+			<Text text="Name" width="50%" id="__text10"/>
+			<Input width="100%" id="__inputCRUD1"/>
+			<Text text="Description" width="50%" id="__text11"/>
+			<Input width="100%" id="__inputCRUD2"/>
+			<Text text="ReleaseDate" width="50%" id="__text12"/>
+			<Input width="100%" id="__inputCRUD3"/>
+			<Text text="DiscontinuedDate" width="50%" id="__text13"/>
+			<Input width="100%" id="__inputCRUD4"/>
+			<Text text="Rating" width="50%" id="__text14"/>
+			<Input width="100%" id="__inputCRUD5"/>
+			<Text text="Price" width="50%" id="__text15"/>
+			<Input width="100%" id="__inputCRUD6"/>
+		</content>
+		<beginButton>
+			<Button text="OK" press="onCreate"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseViewDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
